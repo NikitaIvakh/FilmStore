@@ -1,0 +1,62 @@
+﻿@model OrderModel
+
+@{
+    ViewData["Title"] = "Корзина";
+}
+
+<h1>Корзина</h1>
+
+<table class="table table-sm table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center" scope="col">№</th>
+            <th class="text-center" scope="col">Автор</th>
+            <th scope="col">Название</th>
+            <th class="text-center" scope="col">Количество</th>
+            <th class="text-center" scope="col">Цена</th>
+            <th class="text-center" scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Items.Length; i++)
+        {
+            <tr>
+                <td class="text-center">@(i + 1)</td>
+                <td class="text-center">@Model.Items[i].Author</td>
+                <td>@Model.Items[i].Title</td>
+                <td class="text-center">@Model.Items[i].Count</td>
+                <td class="text-center">@Model.Items[i].Price$</td>
+                <td class="text-center">
+                    <form class="form-inline" action="@Url.Action(nameof(OrderController.RemoveItem))" method="post">
+                        <input type="hidden" name="filmId" value="@Model.Items[i].FilmId" />
+                        <button class="btn btn-danger" type="submit">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-end">Итого</td>
+            <td class="text-center">@Model.TotalCount</td>
+            <td class="text-center">@Model.TotalPrice$</td>
+        </tr>
+    </tfoot>
+</table>
+
+<p>
+    Для оформления заказа необходимо подтвердить номер вашего мобильного.
+    Введите номер и нажмите <em>Отправить код</em>. На ваш номер будет отправлен *код подтверждения*.
+</p>
+
+<form action="@Url.Action(nameof(OrderController.SendConfirmation))" method="post">
+    <div class="form-group">
+        <label for="cellPhone">Мобильный телефон</label>
+        <input type="text" class="form-control" name="cellPhone" placeholder="+375(29)567-98-90" value="+375(29)567-98-90" />
+        @if (Model.Errors.ContainsKey("CellPhone"))
+        {
+            <small class="form-text text-danger">@Model.Errors["CellPhone"]</small>
+        }
+    </div>
+    <button type="submit" class="btn btn-success btn-resend">Отправить код</button>
+</form>

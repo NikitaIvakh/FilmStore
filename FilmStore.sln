@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{E664A005-DFDD-4DB4-938D-37DE14EC9D1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmStore", "Domain\FilmStore\FilmStore.csproj", "{3576EF63-A352-407B-961E-36FB553E4E27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2B945EC2-AC89-4476-B6CC-EC75C40EA352}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{39AF4E86-B10A-4668-B2D4-6FBCC22BC81C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmStore.Presentation", "Presentation\FilmStore.Presentation\FilmStore.Presentation.csproj", "{165B662E-5BF8-4654-A304-731692814745}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmStore.Test", "Domain\FilmStore.Test\FilmStore.Test.csproj", "{40AE9807-3FB7-4496-83CF-FE1C4DCCEC5E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmStore.Presentation.Contractors", "Presentation\FilmStore.Presentation.Contractors\FilmStore.Presentation.Contractors.csproj", "{8171437F-87F0-4283-A787-E68969CD5620}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{9E005C81-2B00-4267-BA4F-11488E244FCB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmStore.Contractors.YandexKassa", "Plugins\FilmStore.Contractors.YandexKassa\FilmStore.Contractors.YandexKassa.csproj", "{1574BCB5-9F29-42F6-970B-ACD1B7538065}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{678D1D27-767A-4525-A9E2-237995E23EF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FilmStore.Presentation.Application", "Application\FilmStore.Presentation.Application\FilmStore.Presentation.Application.csproj", "{6B4714D9-9790-440F-916C-7D55DB6BD1CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmStore.Data.EF", "Infrastructure\FilmStore.Data.EF\FilmStore.Data.EF.csproj", "{9D230CA8-1776-4B03-BD16-DDB15F0955F6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3576EF63-A352-407B-961E-36FB553E4E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3576EF63-A352-407B-961E-36FB553E4E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3576EF63-A352-407B-961E-36FB553E4E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3576EF63-A352-407B-961E-36FB553E4E27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{165B662E-5BF8-4654-A304-731692814745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165B662E-5BF8-4654-A304-731692814745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165B662E-5BF8-4654-A304-731692814745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165B662E-5BF8-4654-A304-731692814745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40AE9807-3FB7-4496-83CF-FE1C4DCCEC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40AE9807-3FB7-4496-83CF-FE1C4DCCEC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40AE9807-3FB7-4496-83CF-FE1C4DCCEC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40AE9807-3FB7-4496-83CF-FE1C4DCCEC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8171437F-87F0-4283-A787-E68969CD5620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8171437F-87F0-4283-A787-E68969CD5620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8171437F-87F0-4283-A787-E68969CD5620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8171437F-87F0-4283-A787-E68969CD5620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1574BCB5-9F29-42F6-970B-ACD1B7538065}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1574BCB5-9F29-42F6-970B-ACD1B7538065}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1574BCB5-9F29-42F6-970B-ACD1B7538065}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1574BCB5-9F29-42F6-970B-ACD1B7538065}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B4714D9-9790-440F-916C-7D55DB6BD1CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B4714D9-9790-440F-916C-7D55DB6BD1CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B4714D9-9790-440F-916C-7D55DB6BD1CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B4714D9-9790-440F-916C-7D55DB6BD1CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D230CA8-1776-4B03-BD16-DDB15F0955F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D230CA8-1776-4B03-BD16-DDB15F0955F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D230CA8-1776-4B03-BD16-DDB15F0955F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D230CA8-1776-4B03-BD16-DDB15F0955F6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3576EF63-A352-407B-961E-36FB553E4E27} = {E664A005-DFDD-4DB4-938D-37DE14EC9D1F}
+		{165B662E-5BF8-4654-A304-731692814745} = {39AF4E86-B10A-4668-B2D4-6FBCC22BC81C}
+		{40AE9807-3FB7-4496-83CF-FE1C4DCCEC5E} = {E664A005-DFDD-4DB4-938D-37DE14EC9D1F}
+		{8171437F-87F0-4283-A787-E68969CD5620} = {39AF4E86-B10A-4668-B2D4-6FBCC22BC81C}
+		{1574BCB5-9F29-42F6-970B-ACD1B7538065} = {9E005C81-2B00-4267-BA4F-11488E244FCB}
+		{6B4714D9-9790-440F-916C-7D55DB6BD1CF} = {678D1D27-767A-4525-A9E2-237995E23EF4}
+		{9D230CA8-1776-4B03-BD16-DDB15F0955F6} = {2B945EC2-AC89-4476-B6CC-EC75C40EA352}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE81E0B1-7F0B-4DB3-81CB-C86C0C0B85AE}
+	EndGlobalSection
+EndGlobal

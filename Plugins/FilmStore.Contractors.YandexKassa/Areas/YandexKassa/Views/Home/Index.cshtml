@@ -1,0 +1,24 @@
+﻿@model ExampleModel
+
+@{
+    ViewData["Title"] = "Яндекс.Касса";
+}
+
+<style>
+    btn-resend {
+        margin-top: 10px;
+    }
+</style>
+
+<h1>Яндекс.Касса</h1>
+
+<p>
+    Здесь мы эмулируем редирект на внешнюю службу оплаты Яндекс.Касса. В исходном коде
+    проекта можно посмотреть, как передаются параметры.
+</p>
+
+<form action="@Url.Action(nameof(HomeController.Callback), "Home", new { area = "YandexKassa" })" method="post">
+    <input type="hidden" name="orderId" value="@Model.OrderId" />
+    <input type="hidden" name="returnUri" value="@Model.ReturnUri" />
+    <button type="submit" class="btn btn-success btn-resend">Оплатить</button>
+</form>

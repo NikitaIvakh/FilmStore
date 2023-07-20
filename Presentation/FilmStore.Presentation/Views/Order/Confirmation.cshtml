@@ -1,0 +1,41 @@
+﻿@model OrderModel
+
+@{
+    ViewData["Title"] = "Подтверждение мобильного телефона";
+}
+
+<h1>Подтверждение мобильного телефона</h1>
+
+<p>
+    Введите <em>код подтверждения</em> из SMS.
+</p>
+
+<form action="@Url.Action(nameof(OrderController.ConfirmCellPhone))" method="post">
+    <input type="hidden" name="cellPhone" value="@Model.CellPhone" />
+    <div class="form-group">
+        <label for="confirmationCode">Код потдверждения</label>
+        <input type="text" class="form-control" name="confirmationCode" placeholder="0000" />
+        @if (Model.Errors.ContainsKey("confirmationCode"))
+        {
+            <small class="form-text text-danger">@Model.Errors["confirmationCode"]</small>
+        }
+    </div>
+    <button type="submit" class="btn btn-success btn-resend">Проверить</button>
+</form>
+
+<p>
+    Если на ваш номер SMS не пришла в течение минуты, проверьте правильность номера и
+    повторите отправку кода.
+</p>
+
+<form action="@Url.Action(nameof(OrderController.SendConfirmation))" method="post">
+    <div class="form-group">
+        <label for="cellPhone">Мобильный телефон</label>
+        <input type="text" class="form-control" name="cellPhone" value="@Model.CellPhone" />
+        @if (Model.Errors.ContainsKey("CellPhone"))
+        {
+            <small class="form-text text-danger">@Model.Errors["CellPhone"]</small>
+        }
+    </div>
+    <button type="submit" class="btn btn-success btn-resend">Повторить код</button>
+</form>

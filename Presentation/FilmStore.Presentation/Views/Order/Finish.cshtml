@@ -1,0 +1,54 @@
+﻿@model OrderModel
+@{
+    ViewData["Title"] = "Заказ оформлен";
+}
+
+@*Добавить иформацию об оформленном заказе*@
+
+<p>
+    Заказ оформлен. Мы собираем его, чтобы передать в службу доставки.
+    Ждите SMS.
+</p>
+
+<table class="table table-sm table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th class="text-center" scope="col">№</th>
+            <th class="text-center" scope="col">Автор</th>
+            <th scope="col">Название</th>
+            <th class="text-center" scope="col">Количество</th>
+            <th class="text-center" scope="col">Цена</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Items.Length; i++)
+        {
+            <tr>
+                <td class="text-center">@(i + 1)</td>
+                <td class="text-center">@Model.Items[i].Author</td>
+                <td>@Model.Items[i].Title</td>
+                <td class="text-center">@Model.Items[i].Count</td>
+                <td class="text-center">@Model.Items[i].Price$</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-end">Итого с доставкой</td>
+            <td class="text-center">@Model.TotalCount</td>
+            <td class="text-center">@Model.TotalPrice$</td>
+        </tr>
+    </tfoot>
+</table>
+
+<strong>Доставка</strong>
+<pre>
+@Model.DeliveryDescription
+</pre>
+
+<strong>Оплата</strong>
+<pre>@Model.PaymentDescription</pre>
+
+<p>
+    <a href="@Url.Action("Index", "Home")">Вернутся в магазин</a>.
+</p>

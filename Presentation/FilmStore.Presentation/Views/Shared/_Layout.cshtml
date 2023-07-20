@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Интернет-магазин с фильмами</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/FilmStore.Presentation.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <h2 class="logo">Интернет-магазин фильмов</h2>
+          <form action="@Url.Action("Index", "Search")" method="get">
+        <div class="search-wrapper">
+            <div class="input-holder">
+                <input type="text" class="search-input" name="query" placeholder="Type to search" />
+                <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+            </div>
+            <span class="close" onclick="searchToggle(this, event);"></span>
+        </div>
+        </form>
+        <nav class="navigation">
+            <a class="about" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a class="about" asp-area="" asp-controller="About" asp-action="Index">About</a>
+            <a class="about" asp-area="" asp-controller="" asp-action="">Contact</a>
+            <span>
+                <i class="fa fa-shopping-cart"> </i>
+                @{
+                    if (Context.Session.TryGetCart(out Cart cart) && cart.TotalCount > 0)
+                    {
+                        <form class="btn btn-primary btn-lg btn3d" action="@Url.Action("Index", "Order")">
+                            <button class="empty-cart">Товаров: @cart.TotalCount</button>
+                        </form>
+                    }
+
+                    else
+                    {
+                        <form class="btn btn-primary btn-lg btn3d" action="@Url.Action("Index", "Order")">
+                            <button class="empty-cart">Корзина пустая</button>
+                        </form>
+                    }
+                }
+            </span>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
